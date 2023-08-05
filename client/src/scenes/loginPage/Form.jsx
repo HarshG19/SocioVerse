@@ -47,16 +47,16 @@ const Form = () => {
 
   const register = async () => {
     try {
-      const regres=await axios.post("http://localhost:3001/auth/register", {
-          headers:{
-            "content-type":"application/json",
-          },
-          body:
-            registerdata
-         });
-  
+      const regres = await axios.post("https://socioverse-pilb.onrender.com/auth/register", {
+        headers: {
+          "content-type": "application/json",
+        },
+        body:
+          registerdata
+      });
+
       const savedUser = regres;
-  
+
       console.log(savedUser);
       if (savedUser) {
         setPageType("login");
@@ -65,13 +65,13 @@ const Form = () => {
       console.log("Error during Phejesk:", error);
     }
   };
-  
+
 
 
 
 
   const login = async () => {
-    const loggedInResponse = await axios.post("http://localhost:3001/auth/login", {
+    const loggedInResponse = await axios.post("https://socioverse-pilb.onrender.com/auth/login", {
       headers: { "Content-Type": "application/json" },
       body: logindata
     });

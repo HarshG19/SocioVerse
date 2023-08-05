@@ -57,7 +57,7 @@ const Navbar = () => {
   const handleSearch = async () => {
     setOpen(true);
     try {
-      const response = await axios.get("http://localhost:3001/search", {
+      const response = await axios.get("https://socioverse-pilb.onrender.com/search", {
         params: { firstName: searchData }
       });
       console.log(response);

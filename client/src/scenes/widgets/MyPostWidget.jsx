@@ -41,25 +41,25 @@ const MyPostWidget = ({ picturePath }) => {
   const medium = palette.neutral.medium;
 
   const [post, setPost] = useState({
-    userId:_id,
+    userId: _id,
     description: "",
     image: ""
   });
 
-  
+
   const handlePost = async () => {
 
     setIsImage(false);
-    
-    const response = await axios.post(`http://localhost:3001/posts`,{
-      headers: { Authorization: `Bearer ${token}`, "content-type":"application/JSON"},
+
+    const response = await axios.post(`https://socioverse-pilb.onrender.com/posts`, {
+      headers: { Authorization: `Bearer ${token}`, "content-type": "application/JSON" },
       body: post
     });
     const posts = await response.data;
     dispatch(setPosts({ posts }));
     setPost(
       {
-        userId:_id,
+        userId: _id,
         description: "",
         image: ""
       }

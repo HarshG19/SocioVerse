@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const UserWidget = ({ userId}) => {
+const UserWidget = ({ userId }) => {
   const [user, setUser] = useState(null);
   const { palette } = useTheme();
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const UserWidget = ({ userId}) => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/users/${userId}`, {
+      const response = await axios.get(`https://socioverse-pilb.onrender.com/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = response.data;
